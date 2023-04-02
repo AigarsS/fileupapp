@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<script type="module-shim">
+  import * as ActiveStorage from "@rails/activestorage"
+  ActiveStorage.start()
+</script>
 <html>
   <head>
     <title>Fileupapp</title>
@@ -13,6 +17,7 @@
   <body>
     <p class="notice"><%= notice %></p> 
     <p class="alert"><%= alert %></p>
+    <%= button_to 'Sign Out', destroy_user_session_path, method: :delete if signed_in?%>
     <%= yield %>
   </body>
 </html>
