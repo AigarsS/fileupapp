@@ -1,6 +1,6 @@
 require "test_helper"
 
-class AttachmentFileControllerTest < ActionDispatch::IntegrationTest
+class UploadsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,7 @@
+<span>
+  <%= upload.uploaded_file.blob.filename %>
+  <%= upload.uploaded_file.blob.created_at %>
+  <%= link_to "delete", upload, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <%= link_to "download", rails_blob_path(upload.uploaded_file, disposition: "attachment") %>
+</span>
+<br>

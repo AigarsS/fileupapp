@@ -1,2 +1,0 @@
-class AttachmentFileController < ApplicationController
-end
