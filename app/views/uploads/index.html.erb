@@ -2,8 +2,10 @@
 
 <div>
   <div>
+    <h2>Upload a file:</h2>
     <%= form_with(model: Upload.new) do |form| %>
       <%= form.file_field :uploaded_file %>
+      <br>
       <br>
       <%= form.submit style: 'display: block' %>
     <% end %>
@@ -11,6 +13,30 @@
   <br>
   <br>
   <div>
-    <%= render @uploads %>
+    <h2>List of uploade files for user</h2>
+    <table>
+      <tr>
+        <th>File name</th>
+        <th>File upload date</th>
+        <th></th>
+        <th></th>
+      <tr>
+      <%= render @uploads %>
+    </table>
   </div>
+</div>
+<br>
+<br>
+<div>
+  <h2>Generate PDF report</h2>
+  <%= form_with(url: pdf_printout_uploads_path(format: 'pdf'), method: :get) do |form| %>
+    <%= form.label :start_date,'Date from:' %>
+    <%= form.date_field :start_date %>
+    <br>
+    <%= form.label :end_date,'Date to:' %>
+    <%= form.date_field :end_date %>
+    <br>
+    <br>
+    <%= form.submit 'Generate PDF report', style: 'display: block' %>
+  <% end %>
 </div>

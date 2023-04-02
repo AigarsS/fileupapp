@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "uploads#index"
 
-  resources :uploads
+  resources :uploads do
+    get :pdf_printout, on: :collection
+  end
 end

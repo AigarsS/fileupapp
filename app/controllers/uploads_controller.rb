@@ -22,6 +22,15 @@ class UploadsController < ApplicationController
     end
   end
 
+  def pdf_printout
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+
+    @uploads = Upload.for_current_user(current_user.id).between_dates(start_date, end_date)
+  rescue ArgumentError
+    render partial: 'error', comment: @comment, status: :bad_request
+  end
+
   private
 
   def upload_params

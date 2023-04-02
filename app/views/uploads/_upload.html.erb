@@ -1,7 +1,6 @@
-<span>
-  <%= upload.uploaded_file.blob.filename %>
-  <%= upload.uploaded_file.blob.created_at %>
-  <%= link_to "delete", upload, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <%= link_to "download", rails_blob_path(upload.uploaded_file, disposition: "attachment") %>
-</span>
-<br>
+<tr>
+  <td><%= upload.uploaded_file.blob.filename %></td>
+  <td><%= upload.uploaded_file.blob.created_at.strftime("%d.%m.%Y") %></td>
+  <td><%= link_to "delete", upload, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+  <td><%= link_to "download", rails_blob_path(upload.uploaded_file, disposition: "attachment") %></td>
+</tr>
