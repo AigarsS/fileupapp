@@ -15,14 +15,17 @@
   </head>
 
   <body>
-    <%= render  'layouts/sidenav' if signed_in? %>
-
-    <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" >
-      <div class="max-w-3xl w-full space-y-8">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
+    <div class="grid grid-cols-7">
+      <%= render  'layouts/sidenav' if signed_in? %>
+      <main class="col-span-6">
+        <div  class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl w-full space-y-8">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>

@@ -1,4 +1,5 @@
-<aside class="fixed top-0 left-0 w-64 h-full" aria-label="Sidenav">
+<%# <aside class="fixed top-0 left-0 w-64 h-full" aria-label="Sidenav"> %>
+<aside class="self-start sticky top-0 col-span-1" aria-label="Sidenav">
   <div class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <ul class="space-y-2">
       <li>
@@ -11,8 +12,10 @@
         <%= link_to "Generate Report", pdf_printout_uploads_path, class: "nav-link" %>
       </li>
     </ul>
-    <div class="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-white dark:bg-gray-800 z-20">
-      <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "button-nav" %>
-    </div>
+    <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
+      <li>
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "button-nav" %>
+      </li>
+    </ul>
   </div>
 </aside>
