@@ -1,4 +1,14 @@
-<%= form_with model: Upload.new, local: true do |form| %>
-  <%= form.file_field :uploaded_file %><br>
-  <%= form.submit %>
+<%= form_with model: @upload, local: true do |form| %>
+  <div class="pb-5">
+    <%= form.label :uploaded_file, 'Upload file:', class: "mt-0 mb-2 text-3xl font-medium leading-tight text-primary" %>
+    <div class="mt-1 text-sm text-gray-500 py-2">Upload a file to your user profile</div>
+  </div>
+  <div class="pb-5">
+    <%= form.file_field :uploaded_file, multiple: false, class: "block w-full cursor-pointer bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-transparent text-sm rounded-lg" %>
+  </div>
+  <%= form.submit 'Save', class: "actions group relative w-50 flex
+    justify-center py-2 px-4 border border-transparent text-sm font-medium
+    rounded-md text-white bg-indigo-600 hover:bg-indigo-700
+    focus:outline-none focus:ring-2 focus:ring-offset-2
+    focus:ring-indigo-500" %>
 <% end %>

@@ -3,6 +3,10 @@ class UploadsController < ApplicationController
     @uploads = Upload.for_current_user(current_user.id)
   end
 
+  def new
+    @upload = Upload.new
+  end
+
   def create
     @upload = Upload.new(user_id: current_user.id)
     @upload.uploaded_file.attach(upload_params[:uploaded_file])
@@ -23,10 +27,12 @@ class UploadsController < ApplicationController
   end
 
   def pdf_printout
-    start_date = Date.parse(params[:start_date])
-    end_date = Date.parse(params[:end_date])
+    if request.format.pdf?
+      @start_date = Date.parse(params[:start_date])
+      @end_date = Date.parse(params[:end_date])
 
-    @uploads = Upload.for_current_user(current_user.id).between_dates(start_date, end_date)
+      @uploads = Upload.for_current_user(current_user.id).between_dates(@start_date, @end_date)
+    end
   rescue ArgumentError
     render partial: 'error', comment: @comment, status: :bad_request
   end

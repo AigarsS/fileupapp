@@ -1,42 +1,16 @@
-<h1>Uploaded files for user <%=current_user.email%></h1>
-
-<div>
-  <div>
-    <h2>Upload a file:</h2>
-    <%= form_with(model: Upload.new) do |form| %>
-      <%= form.file_field :uploaded_file %>
-      <br>
-      <br>
-      <%= form.submit style: 'display: block' %>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <div>
-    <h2>List of uploade files for user</h2>
-    <table>
-      <tr>
-        <th>File name</th>
-        <th>File upload date</th>
-        <th></th>
-        <th></th>
-      <tr>
-      <%= render @uploads %>
-    </table>
-  </div>
-</div>
-<br>
-<br>
-<div>
-  <h2>Generate PDF report</h2>
-  <%= form_with(url: pdf_printout_uploads_path(format: 'pdf'), method: :get) do |form| %>
-    <%= form.label :start_date,'Date from:' %>
-    <%= form.date_field :start_date %>
-    <br>
-    <%= form.label :end_date,'Date to:' %>
-    <%= form.date_field :end_date %>
-    <br>
-    <br>
-    <%= form.submit 'Generate PDF report', style: 'display: block' %>
-  <% end %>
-</div>
+<h1 class="mt-0 mb-2 text-3xl font-medium leading-tight text-primary">
+  User's <%=current_user.email%> uploaded files list:
+</h1>
+<table class="min-w-full table-auto border">
+  <thead class="border-black border-2 bg-gray-800 text-gray-300" >
+    <tr>
+      <th>Nr.</th>
+      <th>File name</th>
+      <th>File upload date</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @uploads %>
+  </tbody>
+</table>
