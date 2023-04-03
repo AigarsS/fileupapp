@@ -2,11 +2,11 @@
 <%= form_with(url: pdf_printout_uploads_path(format: 'pdf'), method: :get) do |form| %>
   <div class="pb-5">
     <%= form.label :start_date,'Date from:' %>
-    <%= form.date_field :start_date, class: "form-input" %>
+    <%= form.date_field :start_date, class: 'form-input' %>
   </div>
   <div class="pb-5">
     <%= form.label :end_date,'Date to:' %>
-    <%= form.date_field :end_date, class: "form-input" %>
+    <%= form.date_field :end_date, class: 'form-input' %>
   </div>
-  <%= form.submit 'Generate PDF report', class: "button-action" %>
+  <%= form.submit 'Generate PDF report', class: 'button-action' %>
 <% end %>

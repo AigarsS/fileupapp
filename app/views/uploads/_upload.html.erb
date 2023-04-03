@@ -2,6 +2,6 @@
   <td><%= "#{upload_iteration.index + 1}." %></td>
   <td><%= upload.uploaded_file.blob.filename %></td>
   <td><%= upload.uploaded_file.blob.created_at.strftime("%d.%m.%Y") %></td>
-  <td><%= link_to fa_icon("download"), rails_blob_path(upload.uploaded_file, disposition: "attachment"), class: "link"  %></td>
-  <td><%= link_to fa_icon("trash"), upload, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "link"  %></td>
+  <td><%= link_to fa_icon('download'), rails_blob_path(upload.uploaded_file, disposition: 'attachment'), class: 'link' %></td>
+  <td><%= link_to fa_icon('trash'), upload, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'link' %></td>
 </tr>

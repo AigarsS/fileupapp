@@ -3,18 +3,18 @@
   <div class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <ul class="space-y-2">
       <li>
-        <%= link_to "File List", uploads_path, class: "nav-link" %>
+        <%= link_to 'File List', uploads_path, class: 'nav-link' %>
       </li>
       <li>
-        <%= link_to "File Upload", new_upload_path, class: "nav-link" %>
+        <%= link_to 'File Upload', new_upload_path, class: 'nav-link' %>
       </li>
       <li>
-        <%= link_to "Generate Report", pdf_printout_uploads_path, class: "nav-link" %>
+        <%= link_to 'Generate Report', pdf_printout_uploads_path, class: 'nav-link' %>
       </li>
     </ul>
     <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
       <li>
-        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "button-nav" %>
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button-nav' %>
       </li>
     </ul>
   </div>

@@ -1,10 +1,10 @@
 <%= form_with model: @upload, local: true do |form| %>
   <div class="pb-5">
-    <%= form.label :uploaded_file, 'Upload file:', class: "form-label" %>
+    <%= form.label :uploaded_file, 'Upload file:', class: 'form-label' %>
     <div class="mt-1 text-sm text-gray-500 py-2">Upload a file to your user profile</div>
   </div>
   <div class="pb-5">
-    <%= form.file_field :uploaded_file, multiple: false, class: "file-upload-field" %>
+    <%= form.file_field :uploaded_file, multiple: false, class: 'file-upload-field' %>
   </div>
-  <%= form.submit 'Save', class: "button-action" %>
+  <%= form.submit 'Save', class: 'button-action' %>
 <% end %>
