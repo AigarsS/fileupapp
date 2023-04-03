@@ -1,24 +1,12 @@
-<h1 class="mt-0 mb-2 text-3xl font-medium leading-tight text-primary">
-  Generate PDF report
-</h1>
+<h1 class="title-primary">Generate PDF report</h1>
 <%= form_with(url: pdf_printout_uploads_path(format: 'pdf'), method: :get) do |form| %>
   <div class="pb-5">
     <%= form.label :start_date,'Date from:' %>
-    <%= form.date_field :start_date, class: "appearance-none rounded-none relative
-      block w-full px-3 py-2 border border-gray-300 placeholder-gray-500
-      text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500
-      focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+    <%= form.date_field :start_date, class: "form-input" %>
   </div>
   <div class="pb-5">
     <%= form.label :end_date,'Date to:' %>
-    <%= form.date_field :end_date, class: "appearance-none rounded-none relative
-      block w-full px-3 py-2 border border-gray-300 placeholder-gray-500
-      text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500
-      focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+    <%= form.date_field :end_date, class: "form-input" %>
   </div>
-  <%= form.submit 'Generate PDF report', class: "actions group relative w-50 flex
-    justify-center py-2 px-4 border border-transparent text-sm font-medium
-    rounded-md text-white bg-indigo-600 hover:bg-indigo-700
-    focus:outline-none focus:ring-2 focus:ring-offset-2
-    focus:ring-indigo-500" %>
+  <%= form.submit 'Generate PDF report', class: "button-action" %>
 <% end %>
